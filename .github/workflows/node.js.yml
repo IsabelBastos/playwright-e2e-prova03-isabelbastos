@@ -21,7 +21,7 @@ jobs:
         cache: 'npm'      
     - run: npm install 
     - run: npx playwright install      
-    - run: npm run actions  
+    - run: xvfb-run --auto-servernum npx playwright test Zara.spec.ts --output artifacts/media --workers 1 
       env:
         ZEROSTEP_TOKEN: ${{ secrets.ZEROSTEP_TOKEN }}       
 
